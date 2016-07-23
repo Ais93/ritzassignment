@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="ritzlondon.css">
+			<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+			<title>The Ritz London</title>
+			<script 
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+			</script>
+<!--code from W3Schools to display XML data on webpage-->
+<script>
+function loadXMLDoc(filename)
+{
+if (window.ActiveXObject)
+  {
+  xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+  }
+else 
+  {
+  xhttp = new XMLHttpRequest();
+  }
+xhttp.open("GET", filename, false);
+try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+xhttp.send("");
+return xhttp.responseXML;
+}
+
+function loadDoc()
+{
+xml = loadXMLDoc("hotel.xml");
+xsl = loadXMLDoc("hotel.xsl");
+// code for IE
+if (window.ActiveXObject || xhttp.responseType == "msxml-document")
+  {
+  ex = xml.transformNode(xsl);
+  document.getElementById("example").innerHTML = ex;
+  }
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+  {
+  xsltProcessor = new XSLTProcessor();
+  xsltProcessor.importStylesheet(xsl);
+  resultDocument = xsltProcessor.transformToFragment(xml, document);
+  document.getElementById("section2").appendChild(resultDocument);
+  }
+}
+</script>
+		</head>
+		<body>			
+			<div id= "section1">
+			<div class= "container">
+				<h1>The Ritz London</h1>
+				<div id= "info">
+				<p>Set in the bustling Mayfair and St. James district, this luxe, iconic 1906 hotel is a 4-minute walk
+				from the Royal Academy of Arts and a 7-minute walk from Piccadilly Circus.
+				The ornate rooms with Louis XVI-style decor and antique furnishings have free WiFi, flat-screen
+				TVs, iPod docks, and minibars. Suites add living/dining areas, grand pianos, butlers and an airport
+				shuttle in the hotel's Rolls Royce.
+				A palatial restaurant offers high-end dining and while afternoon tea is served in a palm tree-lined
+				courtyard. An elegant art deco bar serves bespoke cocktails. There's also a posh salon offering spa
+				treatments and event space.</p>	
+				</div>
+				
+				<video controls autoplay>
+				<source src="Ritz.mp4" type="video/mp4">
+				<p>Sorry your browser doesn't support video.</p></video>
+				<br>
+			</div>
+			</div>
+			
+			<div id= "section2">
+			<div class= "container">			
+			</div>
+			</div>
+			
+			<div id= "section3">
+			<div class= "container">
+			<button type="button" id= "check" onclick="loadDoc()">Check Availability</button>			
+			</div>
+			</div>
+			
+			
+			
+			<footer>
+				<h4>The Ritz London</h4>
+				<p>Address: 150 Piccadilly, London W1J 9BR, United Kingdom</p>
+				<p>Phone: +44 20 7493 8181</p>
+			</footer>
+		</body>
+</html>
+		
+		

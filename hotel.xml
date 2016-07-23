@@ -1,0 +1,37 @@
+<?xml version= "1.0" encoding = "UTF-8"?>
+<HOTEL>
+	<ROOM>
+		<TYPE>Double</TYPE>
+		<AMOUNT>2</AMOUNT>
+		<PRICE>£155pp</PRICE>
+		<DATE>Monday 11/07/2016</DATE>
+	</ROOM>
+
+	<ROOM>
+		<TYPE>Single</TYPE>
+		<AMOUNT>4</AMOUNT>
+		<PRICE>£120pp</PRICE>
+		<DATE>Monday 11/07/2016</DATE>
+	</ROOM>
+	
+	<ROOM>
+		<TYPE>Twin</TYPE>
+		<AMOUNT>1</AMOUNT>
+		<PRICE>£150pp</PRICE>
+		<DATE>Monday 11/07/2016</DATE>
+	</ROOM>
+	
+	<ROOM>
+		<TYPE>Twin</TYPE>
+		<AMOUNT>4</AMOUNT>
+		<PRICE>£150pp</PRICE>
+		<DATE>Wednesday 13/07/2016</DATE>
+	</ROOM>
+	
+	<ROOM>
+		<TYPE>Double</TYPE>
+		<AMOUNT>3</AMOUNT>
+		<PRICE>£150pp</PRICE>
+		<DATE>Thursday 15/07/2016</DATE>
+	</ROOM>
+</HOTEL>
